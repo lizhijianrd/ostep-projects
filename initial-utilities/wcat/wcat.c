@@ -25,14 +25,14 @@ int main(int argc, char **argv) {
             printf("%s", buff);
             if (n < READ_SIZE) {
                 if (ferror(file) != 0) {
-                    printf("error occur while reading file %s: %s",
+                    printf("error occur while reading file %s: %s\n",
                             filename, strerror(ferror(file)));
                 }
                 break;
             }
         }
         if (fclose(file) == EOF) {
-            printf("close file %s failed: %s", filename, strerror(errno));
+            printf("close file %s failed: %s\n", filename, strerror(errno));
         }
     }
     return 0;
